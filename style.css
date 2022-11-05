@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  cursor: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+body {
+  background-color: blueviolet;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 2em;
+  margin-top: 2em;
+  font-size: 2.5em;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: rgb(134, 194, 75);
+  box-shadow: rgb(209, 105, 105) 0px 8px 24px;
+
+}
+.score {
+  font-size: 1.3em;
+  margin:1.5em 0 3em 0;
+  border-radius: 10px;
+  text-align: center;
+}
+.score span{
+    padding: 6px;
+    color: black;
+    font-size: 1.4em;
+    border-radius: 10px;
+    background-color: coral;
+    box-shadow: rgb(209, 105, 105) 0px 8px 24px;
+}
+.holesCount {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+}
+.hole {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: black;
+  overflow: hidden;
+}
+.mole {
+  position: absolute;
+  bottom: -8px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-50);
+  animation: appear 0.3s linear;
+  pointer-events: none;
+}
+@keyframes appear {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.buttons button {
+  padding: 15px 45px;
+  border-color: inherit;
+  border-radius: 3px;
+  outline: none;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+  
+}
+button.play {
+  background-color: rgb(134, 194, 75);
+  font-size: 1.3em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+button.stop {
+  display: none;
+  background-color: coral;
+  font-size: 1.3em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.cursor img {
+  position: absolute;
+  height: 250px;
+  z-index: 2;
+    transform: translate(-130px, -70px);
+  pointer-events: none;
+  /* transform: rotateZ(-50deg); */
+}
+
+@keyframes hit {
+  from {
+    transform: rotate(50deg);
+  }
+  to {
+    transform: rotate(-100deg);
+  }
+}
