@@ -1,2 +1,2 @@
 # Whack-a-Mole
-Whack a Mole Game
+Arcade Game - Whack a Mole 
